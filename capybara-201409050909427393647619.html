@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="myApp" id="ng-app" class="ng-app:myApp ng-scope" xmlns:fb="http://ogp.me/ns/fb#"><head>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-2.newrelic.com","errorBeacon":"bam.nr-data.net","licenseKey":"1bcd4d67cc","applicationID":"2818757","transactionName":"JQsLQRRXVFQHRBoABhANFlBJS11LEV9aChBJCgBC","queueTime":18,"applicationTime":258,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-412.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UA4PUlJVGwEIVVlVAgY="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o&lt;n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&amp;&amp;r.length||0,s=n[i]||(n[i]={}),u=0;a&gt;u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){try{u?u-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(c){try{r("ierr",[c,(new Date).getTime(),!0])}catch(d){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(c){"stack"in c&amp;&amp;(t(1),t(2),"addEventListener"in window&amp;&amp;t(3),window.XMLHttpRequest&amp;&amp;XMLHttpRequest.prototype&amp;&amp;XMLHttpRequest.prototype.addEventListener&amp;&amp;t(4),s=!0)}i.on("fn-start",function(){s&amp;&amp;(u+=1)}),i.on("fn-err",function(t,e,r){s&amp;&amp;(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&amp;&amp;!this.thrown&amp;&amp;u&gt;0&amp;&amp;(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&amp;&amp;!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&amp;&amp;e(i);for(var a=XMLHttpRequest.prototype;a&amp;&amp;!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&amp;&amp;e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&amp;&amp;e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&amp;&amp;r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&amp;&amp;(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&amp;&amp;(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&amp;&amp;t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&amp;&amp;t instanceof ArrayBuffer&amp;&amp;t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&amp;&amp;t instanceof Blob&amp;&amp;t.size)return t.size;if("undefined"!=typeof FormData&amp;&amp;t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u&gt;i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,c="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,d=e(c);if(d&amp;&amp;(r.rxSize=d),this.sameOrigin){var f=t.getResponseHeader("X-NewRelic-App-Data");f&amp;&amp;(n.cat=f.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,c=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&amp;&amp;"xpid"in NREUM.loader_config&amp;&amp;this.sameOrigin&amp;&amp;e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&amp;&amp;o){var c=e(o);c&amp;&amp;(r.txSize=c)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&amp;&amp;(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&amp;&amp;(i.onloadCalled||"function"!=typeof n.onload))&amp;&amp;i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var d=0;u&gt;d;d++)n.addEventListener(s[d],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&amp;&amp;"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+c(t)+!!e;this.xhrGuids&amp;&amp;!this.xhrGuids[n]&amp;&amp;(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+c(t)+!!e;this.xhrGuids&amp;&amp;this.xhrGuids[n]&amp;&amp;(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&amp;&amp;"load"===t[0]&amp;&amp;a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&amp;&amp;"load"===t[0]&amp;&amp;a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&amp;&amp;("onload"===n&amp;&amp;(this.onload=!0),("load"===(t[0]&amp;&amp;t[0].type)||this.onload)&amp;&amp;(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&amp;&amp;a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&amp;&amp;XMLHttpRequest.prototype&amp;&amp;XMLHttpRequest.prototype.addEventListener&amp;&amp;!/CriOS/.test(navigator.userAgent)&amp;&amp;e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&amp;&amp;o[1]&amp;&amp;(r.port=o[1].split("/")[0].split(":")[1]),r.port&amp;&amp;"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&amp;&amp;(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&amp;&amp;e.port===n.port&amp;&amp;e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&amp;&amp;"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&amp;&amp;t.agent&amp;&amp;t.licenseKey&amp;&amp;t.applicationID&amp;&amp;u&amp;&amp;u.body){p.proto="https"===f.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&amp;&amp;o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,c="addEventListener",d="attachEvent",f=(""+location).split("?")[0],p=e.exports={offset:i(),origin:f,features:[]};u[c]?(u[c]("DOMContentLoaded",o,!1),s[c]("load",n,!1)):(u[d]("onreadystatechange",r),s[d]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&amp;&amp;(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0&gt;o?0:o);++r&lt;o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),c=this,d=r&amp;&amp;r(a,c)||{}}catch(f){i([f,"",[a,c,s],d])}o(e+"start",[a,c,s],d);try{return n=t.apply(c,a)}catch(p){throw o(e+"err",[a,c,p],d),p}finally{o(e+"end",[a,c,n],d)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,c="-"===r.charAt(0);for(u=0;u&lt;e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,c?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&amp;&amp;"function"==typeof t&amp;&amp;t.apply&amp;&amp;!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script>
+	<title>Wheedu | Join Our Free Community To Help Your Community</title>
+	<meta content="Love Being Involved with Wheedu. Join the world's first free community network built to help you collaborate with those in your community." name="description" />
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<script type="text/javascript">
+//&lt;![CDATA[
+window.gon={};gon.current_user={"id":false,"image":"/images/thumb_78_default_user_icon.jpg","first_name":"Guest","last_name":"User"};
+//]]&gt;
+</script>
+    <script src="/javascripts/es5-shim.js"></script>
+	<script src="/assets/jquery.js?body=1"></script>
+<script src="/assets/jquery_ujs.js?body=1"></script>
+<script src="/assets/jquery.ui.core.js?body=1"></script>
+<script src="/assets/jquery.ui.widget.js?body=1"></script>
+<script src="/assets/jquery.ui.accordion.js?body=1"></script>
+<script src="/assets/jquery.ui.position.js?body=1"></script>
+<script src="/assets/jquery.ui.menu.js?body=1"></script>
+<script src="/assets/jquery.ui.autocomplete.js?body=1"></script>
+<script src="/assets/jquery.ui.button.js?body=1"></script>
+<script src="/assets/jquery.ui.datepicker.js?body=1"></script>
+<script src="/assets/jquery.ui.mouse.js?body=1"></script>
+<script src="/assets/jquery.ui.draggable.js?body=1"></script>
+<script src="/assets/jquery.ui.resizable.js?body=1"></script>
+<script src="/assets/jquery.ui.dialog.js?body=1"></script>
+<script src="/assets/jquery.ui.droppable.js?body=1"></script>
+<script src="/assets/jquery.ui.effect.js?body=1"></script>
+<script src="/assets/jquery.ui.effect-blind.js?body=1"></script>
+<script src="/assets/jquery.ui.effect-bounce.js?body=1"></script>
+<script src="/assets/jquery.ui.effect-clip.js?body=1"></script>
+<script src="/assets/jquery.ui.effect-drop.js?body=1"></script>
+<script src="/assets/jquery.ui.effect-explode.js?body=1"></script>
+<script src="/assets/jquery.ui.effect-fade.js?body=1"></script>
+<script src="/assets/jquery.ui.effect-fold.js?body=1"></script>
+<script src="/assets/jquery.ui.effect-highlight.js?body=1"></script>
+<script src="/assets/jquery.ui.effect-pulsate.js?body=1"></script>
+<script src="/assets/jquery.ui.effect-scale.js?body=1"></script>
+<script src="/assets/jquery.ui.effect-shake.js?body=1"></script>
+<script src="/assets/jquery.ui.effect-slide.js?body=1"></script>
+<script src="/assets/jquery.ui.effect-transfer.js?body=1"></script>
+<script src="/assets/jquery.ui.progressbar.js?body=1"></script>
+<script src="/assets/jquery.ui.selectable.js?body=1"></script>
+<script src="/assets/jquery.ui.slider.js?body=1"></script>
+<script src="/assets/jquery.ui.sortable.js?body=1"></script>
+<script src="/assets/jquery.ui.spinner.js?body=1"></script>
+<script src="/assets/jquery.ui.tabs.js?body=1"></script>
+<script src="/assets/jquery.ui.tooltip.js?body=1"></script>
+<script src="/assets/jquery.ui.all.js?body=1"></script>
+<script src="/assets/jquery.timepicker.js?body=1"></script>
+<script src="/assets/angular.1.1.4.js?body=1"></script><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak{display:none;}ng\:form{display:block;}</style>
+<script src="/assets/angular-resource.js?body=1"></script>
+<script src="/assets/angular-strap.js?body=1"></script>
+<script src="/assets/ui-bootstrap-0.9.0.min.js?body=1"></script>
+<script src="/assets/ui-bootstrap-tpls-0.9.0.min.js?body=1"></script>
+<script src="/assets/twitter/bootstrap/bootstrap-transition.js?body=1"></script>
+<script src="/assets/twitter/bootstrap/bootstrap-alert.js?body=1"></script>
+<script src="/assets/twitter/bootstrap/bootstrap-modal.js?body=1"></script>
+<script src="/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1"></script>
+<script src="/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1"></script>
+<script src="/assets/twitter/bootstrap/bootstrap-tab.js?body=1"></script>
+<script src="/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1"></script>
+<script src="/assets/twitter/bootstrap/bootstrap-popover.js?body=1"></script>
+<script src="/assets/twitter/bootstrap/bootstrap-button.js?body=1"></script>
+<script src="/assets/twitter/bootstrap/bootstrap-collapse.js?body=1"></script>
+<script src="/assets/twitter/bootstrap/bootstrap-carousel.js?body=1"></script>
+<script src="/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1"></script>
+<script src="/assets/twitter/bootstrap/bootstrap-affix.js?body=1"></script>
+<script src="/assets/twitter/bootstrap.js?body=1"></script>
+<script src="/assets/ng-rails-csrf.js?body=1"></script>
+<script src="/assets/bootstrap-switch.min.js?body=1"></script>
+<script src="/assets/calendar.js?body=1"></script>
+<script src="/assets/fullcalendar.js?body=1"></script>
+<script src="/assets/gcal.js?body=1"></script>
+<script src="/assets/html5shiv.js?body=1"></script>
+<script src="/assets/jquery.atooltip.min.js?body=1"></script>
+<script src="/assets/jquery.autosize.min.js?body=1"></script>
+<script src="/assets/jquery.flippy.min.js?body=1"></script>
+<script src="/assets/jquery.liquid-slider.js?body=1"></script>
+<script src="/assets/underscore-min.js?body=1"></script>
+<script src="/assets/simplePagination.js?body=1"></script>
+<script src="/assets/ng-infinite-scroll.min.js?body=1"></script>
+<script src="/assets/toaster.js?body=1"></script>
+<script src="/assets/angular-toggle-switch.min.js?body=1"></script>
+<script src="/assets/angular/angular-file-upload.js?body=1"></script>
+<script src="/assets/angular/app.js?body=1"></script>
+<script src="/assets/angular/controller-helpers.js?body=1"></script>
+<script src="/assets/angular/controllers.js?body=1"></script>
+<script src="/assets/angular/directives.js?body=1"></script>
+<script src="/assets/angular/filters.js?body=1"></script>
+<script src="/assets/angular/image-uploader.js?body=1"></script>
+<script src="/assets/angular/services.js?body=1"></script>
+<script src="/assets/angular/truncate.js?body=1"></script>
+<script src="/assets/bootstrap.js?body=1"></script>
+<script src="/assets/common-facebook-actions.js?body=1"></script>
+<script src="/assets/controllers/group-control-center.js?body=1"></script>
+<script src="/assets/controllers/group-invites.js?body=1"></script>
+<script src="/assets/controllers/group-link.js?body=1"></script>
+<script src="/assets/controllers/group-locations.js?body=1"></script>
+<script src="/assets/controllers/group-participants.js?body=1"></script>
+<script src="/assets/controllers/group-settings.js?body=1"></script>
+<script src="/assets/controllers/group-sponsors.js?body=1"></script>
+<script src="/assets/post_tools.js?body=1"></script>
+<script src="/assets/timepickerdirective.js?body=1"></script>
+<script src="/assets/application.js?body=1"></script>
+	<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="NXvqXyG1fAIeCkEEnHCf/hScDPUlKCglAogipMzdv3s=" />
+	<link rel="stylesheet" media="all" href="/assets/toaster.css?body=1" />
+<link rel="stylesheet" media="all" href="/assets/pagination.css?body=1" />
+<link rel="stylesheet" media="all" href="/assets/bootstrap_and_overrides.css?body=1" />
+<link rel="stylesheet" media="all" href="/assets/jquery.timepicker.css?body=1" />
+<link rel="stylesheet" media="all" href="/assets/application.css?body=1" />
+	<link rel="stylesheet" media="all" href="/assets/pages.css?body=1" />
+	<link href="//ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" media="screen" href="/stylesheets/main.css" />
+	<link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:400,700" />
+	<link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Lilita+One" />
+	<link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" />
+	<link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" />
+	<link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400italic" />
+	<link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Lily+Script+One" />
+	<link rel="stylesheet" media="screen" href="/stylesheets/jquery.sidr.dark.css" />
+    <script src="/javascripts/angular.placeholder.polyfill.js"></script>
+<style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset&gt;div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title&gt;span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fbpluginrecommendationsbarleft,.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}.fbpluginrecommendationsbarleft{left:10px}.fbpluginrecommendationsbarright{right:10px}</style></head>
+<body ng-controller="RegistrationCtrl" class="devise/sessions not-logged-in ng-scope registration-modal">
+<script>
+    function fb_ready(){
+        var deferred = $.Deferred();
+        if(typeof(FB) != 'undefined' &amp;&amp; document.fb_ready){
+            deferred.resolve();
+        } else{
+            $(document).bind('fb.ready', function(){
+                deferred.resolve();
+            });
+        }
+        return deferred.promise();
+    }
+</script>
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe frameborder="0" name="fb_xdm_frame_http" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" style="border: medium none;" src="http://static.ak.facebook.com/connect/xd_arbiter/ZEbdHPQfV3x.js?version=41#channel=f3202b8757391e6&amp;origin=http%3A%2F%2Fwheedu-staging.herokuapp.com"></iframe><iframe frameborder="0" name="fb_xdm_frame_https" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" style="border: medium none;" src="https://s-static.ak.facebook.com/connect/xd_arbiter/ZEbdHPQfV3x.js?version=41#channel=f3202b8757391e6&amp;origin=http%3A%2F%2Fwheedu-staging.herokuapp.com"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+<script>
+    jQuery(function() {
+        return $.ajax({
+            url: "" + window.location.protocol + "//connect.facebook.net/en_US/all.js",
+            dataType: 'script',
+            cache: true
+        });
+    });
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId: '198788776988509',
+            cookie: true
+        });
+        document.fb_ready = true;
+        $(document).trigger('fb.ready');
+        FB.XFBML.parse();
+        $('#facebook_login').click(function(e) {
+            e.preventDefault();
+            return FB.login(function(response) {
+                if (response.authResponse) {
+                    return window.location = '/users/auth/facebook/callback';
+                }
+            }, {scope: 'email,user_location'});
+        });
+        $('#sign_out').click(function(e) {
+            FB.getLoginStatus(function(response) {
+                if (response.authResponse) {
+                    FB.logout(function(response) {
+
+                    });
+                }
+            });
+            return true;
+        });
+    };
+</script>
+<div class="body_container">
+
+<header>
+
+    <div class="navbar-fixed-top logged-out-nav">
+        <div class="logged-out-nav-item logo-container">
+          <a href="/users/sign_in"><img src="/images/email/wheedu_logo.png" /></a>
+        </div>
+        <div id="what_group_wrap">
+            <ul class="nav nav-pills" id="what_group_dropdown">
+                <li class="dropdown">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle ng-binding">
+                        WHAT TYPE OF GROUP ARE YOU?
+                        <img src="/images/register/reg-down-caret.png" id="reg_down_caret" />
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a ng-click="images_filter == 1 || changeLander(1);">ORGANIZATIONS &amp; NON-PROFITS</a></li>
+                        <li><a ng-click="images_filter == 2 || changeLander(2);">EDUCATION &amp; CAMPUSES</a></li>
+                        <li><a ng-click="images_filter == 3 || changeLander(3);">TEAMS &amp; ATHLETICS</a></li>
+                        <li><a ng-click="images_filter == 4 || changeLander(4);">NEIGHBORHOODS &amp; COMMUNITIES</a></li>
+                        <li><a ng-click="images_filter == 5 || changeLander(5);">FAMILIES &amp; SMALL GROUPS</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div style="text-align: center;" id="signup_buttons">
+          <a data-target="#sign_in_modal" data-toggle="modal" class="login-btn sign-in clickable" id="signup_button_login">Login</a>
+          <a data-target="#registration_modal" data-toggle="modal" class="login-btn sign-up clickable" id="signup_button_sign_up">Sign Up</a>
+          <a class="login-btn facebook" href="/users/auth/facebook" id="facebook_login">Facebook</a>
+        </div>
+    </div>
+	<!--<div class="login-message">-->
+		<!--<span class="small">Part of our community? </span>-->
+		<!--<a class="login-btn login-box-toggle">Login</a>-->
+	<!--</div>-->
+	<!---->
+	<link rel="stylesheet" media="screen" href="/stylesheets/login.css" />
+	<!--<div class="login-box">-->
+		<!---->
+			<!---->
+			<!---->
+			<!---->
+				<!--<br/>-->
+                                            <!--<span class="remember">-->
+                                                <!---->
+                                                     <!--Remember me -->
+                                                <!---->
+                                            <!--</span>-->
+			<!---->
+			<!--<div></div>-->
+		<!---->
+		<!---->
+	<!--</div>-->
+
+</header>
+
+<div class="container-fluid wrapper" id="main_wrapper">
+	<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300italic,700,700italic,400italic,600,600italic,300,800,800italic" />
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+
+<div class="registrations row-fluid">
+    <div class="span-12" id="top_slider_wrap">
+        <div class="row-fluid" id="top_slider"><!-- slider start -->
+            <script type="text/ng-template" id="template/carousel/carousel.html">
+                &lt;div class="carousel"&gt;
+                    &lt;ol class="carousel-indicators" ng-show="slides().length &gt; 1"&gt;
+                        &lt;li ng-repeat="slide in slides()" ng-class="{active: isActive(slide)}" ng-click="select(slide); pause();"&gt;&lt;/li&gt;
+                    &lt;/ol&gt;
+                    &lt;div class="carousel-inner" ng-transclude&gt;&lt;/div&gt;
+                    &lt;a ng-click="prev(); stopSliderTransition()" class="carousel-control left" ng-show="slides().length &gt; 1"&gt;&amp;lsaquo;&lt;/a&gt;
+                    &lt;a ng-click="next(); stopSliderTransition()" class="carousel-control right" ng-show="slides().length &gt; 1"&gt;&amp;rsaquo;&lt;/a&gt;
+                &lt;/div&gt;
+            </script>
+            <div class="carousel" interval="myInterval" style="min-height: 350px">
+                    <ol ng-show="slides().length &gt; 1" class="carousel-indicators" style="">
+                        <!-- ngRepeat: slide in slides() --><li ng-click="select(slide); pause();" ng-class="{active: isActive(slide)}" ng-repeat="slide in slides()" class="ng-scope active"></li><li ng-click="select(slide); pause();" ng-class="{active: isActive(slide)}" ng-repeat="slide in slides()" class="ng-scope"></li><li ng-click="select(slide); pause();" ng-class="{active: isActive(slide)}" ng-repeat="slide in slides()" class="ng-scope"></li><li ng-click="select(slide); pause();" ng-class="{active: isActive(slide)}" ng-repeat="slide in slides()" class="ng-scope"></li>
+                    </ol>
+                    <div ng-transclude="" class="carousel-inner">
+                <!-- ngRepeat: slide in slides | filter:{ display_filter: images_filter} --><div ng-transclude="" class="item text-center ng-scope active" ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" active="slide.active" ng-repeat="slide in slides | filter:{ display_filter: images_filter}">
+                    <img style="margin:auto;" ng-src="/images/register/slider1back1.jpg" class="ng-scope" src="/images/register/slider1back1.jpg" />
+                    <div class="carousel-caption ng-scope" id="bringing_group">
+                        <!--<h1>{{slideText1[$index]}}</h1>-->
+                        <!--<h1>{{slideText2[$index]}}</h1>-->
+                        <!--<h2>{{slideText3[$index]}}</h2>-->
+                    </div>
+                </div><div ng-transclude="" class="item text-center ng-scope" ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" active="slide.active" ng-repeat="slide in slides | filter:{ display_filter: images_filter}">
+                    <img style="margin:auto;" ng-src="/images/register/slider1back2.jpg" class="ng-scope" src="/images/register/slider1back2.jpg" />
+                    <div class="carousel-caption ng-scope" id="bringing_group">
+                        <!--<h1>{{slideText1[$index]}}</h1>-->
+                        <!--<h1>{{slideText2[$index]}}</h1>-->
+                        <!--<h2>{{slideText3[$index]}}</h2>-->
+                    </div>
+                </div><div ng-transclude="" class="item text-center ng-scope" ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" active="slide.active" ng-repeat="slide in slides | filter:{ display_filter: images_filter}">
+                    <img style="margin:auto;" ng-src="/images/register/slider1back3.jpg" class="ng-scope" src="/images/register/slider1back3.jpg" />
+                    <div class="carousel-caption ng-scope" id="bringing_group">
+                        <!--<h1>{{slideText1[$index]}}</h1>-->
+                        <!--<h1>{{slideText2[$index]}}</h1>-->
+                        <!--<h2>{{slideText3[$index]}}</h2>-->
+                    </div>
+                </div><div ng-transclude="" class="item text-center ng-scope" ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" active="slide.active" ng-repeat="slide in slides | filter:{ display_filter: images_filter}">
+                    <img style="margin:auto;" ng-src="/images/register/slider1back4.jpg" class="ng-scope" src="/images/register/slider1back4.jpg" />
+                    <div class="carousel-caption ng-scope" id="bringing_group">
+                        <!--<h1>{{slideText1[$index]}}</h1>-->
+                        <!--<h1>{{slideText2[$index]}}</h1>-->
+                        <!--<h2>{{slideText3[$index]}}</h2>-->
+                    </div>
+                </div>
+            </div>
+                    <a ng-show="slides().length &gt; 1" class="carousel-control left" ng-click="prev(); stopSliderTransition()" style="">‹</a>
+                    <a ng-show="slides().length &gt; 1" class="carousel-control right" ng-click="next(); stopSliderTransition()" style="">›</a>
+                </div>
+
+            <a target="_blank" href="https://itunes.apple.com/us/app/wheedu-get-your-group-going/id873408283?mt=8">
+                <img src="/images/register/app-store.png" id="app_store" />
+            </a>
+            <!--<img id="iphone_slider" src="/images/register/iphone-slider.png" class="top-overlay"/>-->
+            <a target="_blank" href="https://itunes.apple.com/us/app/wheedu-get-your-group-going/id873408283?mt=8">
+                <div id="phone_carousel">
+                    <div class="container-fluid carousel" interval="myInterval" style="max-height: 380px">
+                    <ol ng-show="slides().length &gt; 1" class="carousel-indicators" style="">
+                        <!-- ngRepeat: slide in slides() --><li ng-click="select(slide); pause();" ng-class="{active: isActive(slide)}" ng-repeat="slide in slides()" class="ng-scope active"></li><li ng-click="select(slide); pause();" ng-class="{active: isActive(slide)}" ng-repeat="slide in slides()" class="ng-scope"></li><li ng-click="select(slide); pause();" ng-class="{active: isActive(slide)}" ng-repeat="slide in slides()" class="ng-scope"></li><li ng-click="select(slide); pause();" ng-class="{active: isActive(slide)}" ng-repeat="slide in slides()" class="ng-scope"></li><li ng-click="select(slide); pause();" ng-class="{active: isActive(slide)}" ng-repeat="slide in slides()" class="ng-scope"></li><li ng-click="select(slide); pause();" ng-class="{active: isActive(slide)}" ng-repeat="slide in slides()" class="ng-scope"></li>
+                    </ol>
+                    <div ng-transclude="" class="carousel-inner">
+                        <!-- ngRepeat: slide in phoneSlide | filter:{ display_filter: images_filter} --><div ng-transclude="" class="item text-center ng-scope active" ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" active="slide.active" ng-repeat="slide in phoneSlide | filter:{ display_filter: images_filter}">
+                            <img ng-src="/images/register/mobile/00DuList.jpg" class="ng-scope" src="/images/register/mobile/00DuList.jpg" />
+                        </div><div ng-transclude="" class="item text-center ng-scope" ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" active="slide.active" ng-repeat="slide in phoneSlide | filter:{ display_filter: images_filter}">
+                            <img ng-src="/images/register/mobile/01GroupFeed.jpg" class="ng-scope" src="/images/register/mobile/01GroupFeed.jpg" />
+                        </div><div ng-transclude="" class="item text-center ng-scope" ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" active="slide.active" ng-repeat="slide in phoneSlide | filter:{ display_filter: images_filter}">
+                            <img ng-src="/images/register/mobile/02MyCalendar.jpg" class="ng-scope" src="/images/register/mobile/02MyCalendar.jpg" />
+                        </div><div ng-transclude="" class="item text-center ng-scope" ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" active="slide.active" ng-repeat="slide in phoneSlide | filter:{ display_filter: images_filter}">
+                            <img ng-src="/images/register/mobile/03EventPost.jpg" class="ng-scope" src="/images/register/mobile/03EventPost.jpg" />
+                        </div><div ng-transclude="" class="item text-center ng-scope" ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" active="slide.active" ng-repeat="slide in phoneSlide | filter:{ display_filter: images_filter}">
+                            <img ng-src="/images/register/mobile/04MyGroups.jpg" class="ng-scope" src="/images/register/mobile/04MyGroups.jpg" />
+                        </div><div ng-transclude="" class="item text-center ng-scope" ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" active="slide.active" ng-repeat="slide in phoneSlide | filter:{ display_filter: images_filter}">
+                            <img ng-src="/images/register/mobile/phone1slide5.jpg" class="ng-scope" src="/images/register/mobile/phone1slide5.jpg" />
+                        </div>
+                    </div>
+                    <a ng-show="slides().length &gt; 1" class="carousel-control left" ng-click="prev(); stopSliderTransition()" style="">‹</a>
+                    <a ng-show="slides().length &gt; 1" class="carousel-control right" ng-click="next(); stopSliderTransition()" style="">›</a>
+                </div>
+                </div>
+            </a>
+            <div id="register_slidedown">
+                <p data-target="#registration_modal" data-toggle="modal" class="clickable">Get Started, It's Free!</p>
+            </div>
+            <div id="brown_triangle">
+                <img src="/images/register/brown-triangle.png" />
+            </div>
+        </div>
+        <div ng-style="mobileBackgroundURL" id="mobile_top_slider" style="background-image: url(&quot;/images/register/mobslider1back1.jpg&quot;);">
+            <div class="span-12" id="bringing_group">
+                <h1 class="ng-binding">Discover Group Nirvana</h1>
+                <h1 class="ng-binding"></h1>
+                <h2 class="ng-binding">Wheedu is the smart and simple way to manage your group.</h2>
+            </div>
+            <a target="_blank" href="https://itunes.apple.com/us/app/wheedu-get-your-group-going/id873408283?mt=8">
+                <img src="/images/register/app-store.png" id="app_store" />
+            </a>
+            <div id="register_slidedown">
+                <p data-target="#registration_modal" data-toggle="modal" class="clickable">Get Started, It's Free!</p>
+            </div>
+            <div id="brown_triangle">
+                <img src="/images/register/brown-triangle.png" />
+            </div>
+        </div>
+    </div>
+    <div class="span-12" id="why_wheedu" name="why_wheedu">
+        <div id="why_wheedu_text">
+            <h1>why whee<span id="orange_du">du?</span></h1>
+            <p id="wheedu_text_top">
+                Because you should love being involved with the important groups in your life.
+            </p>
+            <h2>
+                Wheedu is a free technology platform designed to help those who want to bring people together to
+                accomplish a shared collective mission and actually enjoy doing it. Borne from frustrations with email,
+                spreadsheets and websites and inspired by the simple idea that there has to be a better way to bring
+                groups together.
+            </h2>
+            <h2>
+                Welcome to the Wheedu community! Love being involved again.
+            </h2>
+        </div>
+        <div id="our_beliefs_button">
+            <p><a href="/beliefs">Read About Our Beliefs</a></p>
+        </div>
+    </div>
+
+    <div class="span-12" id="bottom_slider_wrap">
+        <div id="inner_wrap">
+            <div class="carousel" interval="bottomSlideInterval">
+                    <ol ng-show="slides().length &gt; 1" class="carousel-indicators" style="">
+                        <!-- ngRepeat: slide in slides() --><li ng-click="select(slide); pause();" ng-class="{active: isActive(slide)}" ng-repeat="slide in slides()" class="ng-scope active"></li><li ng-click="select(slide); pause();" ng-class="{active: isActive(slide)}" ng-repeat="slide in slides()" class="ng-scope"></li><li ng-click="select(slide); pause();" ng-class="{active: isActive(slide)}" ng-repeat="slide in slides()" class="ng-scope"></li><li ng-click="select(slide); pause();" ng-class="{active: isActive(slide)}" ng-repeat="slide in slides()" class="ng-scope"></li><li ng-click="select(slide); pause();" ng-class="{active: isActive(slide)}" ng-repeat="slide in slides()" class="ng-scope"></li><li ng-click="select(slide); pause();" ng-class="{active: isActive(slide)}" ng-repeat="slide in slides()" class="ng-scope"></li>
+                    </ol>
+                    <div ng-transclude="" class="carousel-inner">
+                <!-- ngRepeat: slide in slides2 --><div ng-transclude="" class="row-fluid item text-center ng-scope active" ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" active="slide.active" ng-repeat="slide in slides2">
+                    <img id="bottom_slide_img" ng-src="/images/register/01GroupPage.png" class="ng-scope" src="/images/register/01GroupPage.png" />
+                    <div class="carousel-caption ng-scope" id="bottom_slider_text">
+                        <img ng-src="/images/register/icons/00GroupPagebrown.png" src="/images/register/icons/00GroupPagebrown.png" />
+                        <h1 class="ng-binding">Group Page Nirvana</h1>
+                        <h2 class="ng-binding">One place to talk, share, plan and collaborate.  Seriously.</h2>
+                        <h2 class="ng-binding">Tired of digging through 20 group emails?  Set up a group page on Wheedu.  Your Inbox will thank you.</h2>
+                    </div>
+                </div><div ng-transclude="" class="row-fluid item text-center ng-scope" ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" active="slide.active" ng-repeat="slide in slides2">
+                    <img id="bottom_slide_img" ng-src="/images/register/02calendar.png" class="ng-scope" src="/images/register/02calendar.png" />
+                    <div class="carousel-caption ng-scope" id="bottom_slider_text">
+                        <img ng-src="/images/register/icons/01Calendarbrown.png" src="/images/register/icons/01Calendarbrown.png" />
+                        <h1 class="ng-binding">Calendar Enlightenment</h1>
+                        <h2 class="ng-binding">Create events in seconds.  Share them instantaneously.  Sync to personal calendars.</h2>
+                        <h2 class="ng-binding">Our digital trifecta will have you loving your calendar again.</h2>
+                    </div>
+                </div><div ng-transclude="" class="row-fluid item text-center ng-scope" ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" active="slide.active" ng-repeat="slide in slides2">
+                    <img id="bottom_slide_img" ng-src="/images/register/03poll.png" class="ng-scope" src="/images/register/03poll.png" />
+                    <div class="carousel-caption ng-scope" id="bottom_slider_text">
+                        <img ng-src="/images/register/icons/02Pollbrown.png" src="/images/register/icons/02Pollbrown.png" />
+                        <h1 class="ng-binding">Get Them to the Polls</h1>
+                        <h2 class="ng-binding">Group suffrage is here.  Now everyone can vote.  Just create a poll and watch the returns role in.</h2>
+                        <h2 class="ng-binding">Ditch the spreadsheet and let Wheedu keep tabs on everyone’s opinion by tabulating results in real-time.</h2>
+                    </div>
+                </div><div ng-transclude="" class="row-fluid item text-center ng-scope" ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" active="slide.active" ng-repeat="slide in slides2">
+                    <img id="bottom_slide_img" ng-src="/images/register/04Wheefeed.png" class="ng-scope" src="/images/register/04Wheefeed.png" />
+                    <div class="carousel-caption ng-scope" id="bottom_slider_text">
+                        <img ng-src="/images/register/icons/03Volunteerbrown.png" src="/images/register/icons/03Volunteerbrown.png" />
+                        <h1 class="ng-binding">Volunteering Made Easy</h1>
+                        <h2 class="ng-binding">Everyone needs help.  Sometimes even with how to ask for help.</h2>
+                        <h2 class="ng-binding">Get the help you need by creating simple volunteer tasks.  It’s the bees knees in virtual virtuosity.</h2>
+                    </div>
+                </div><div ng-transclude="" class="row-fluid item text-center ng-scope" ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" active="slide.active" ng-repeat="slide in slides2">
+                    <img id="bottom_slide_img" ng-src="/images/register/05DuList.png" class="ng-scope" src="/images/register/05DuList.png" />
+                    <div class="carousel-caption ng-scope" id="bottom_slider_text">
+                        <img ng-src="/images/register/icons/04DuListbrown.png" src="/images/register/icons/04DuListbrown.png" />
+                        <h1 class="ng-binding">From To Do to Done</h1>
+                        <h2 class="ng-binding">You’re awesome.  We get that.  Awesome people don’t have time for boring lists of things to do.</h2>
+                        <h2 class="ng-binding">The DuList is for someone awesome like you.  Discover new things.  Help where you can.  Then get on with life.</h2>
+                    </div>
+                </div><div ng-transclude="" class="row-fluid item text-center ng-scope" ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" active="slide.active" ng-repeat="slide in slides2">
+                    <img id="bottom_slide_img" ng-src="/images/register/06analytics.png" class="ng-scope" src="/images/register/06analytics.png" />
+                    <div class="carousel-caption ng-scope" id="bottom_slider_text">
+                        <img ng-src="/images/register/icons/05Analyticsbrown.png" src="/images/register/icons/05Analyticsbrown.png" />
+                        <h1 class="ng-binding">Analytics - The More You Know</h1>
+                        <h2 class="ng-binding">Ever wonder why the sky is blue?  Where babies come from?  Who’s actually contributing to your group?</h2>
+                        <h2 class="ng-binding">If the answer is yes to one of these questions then Wheedu’s group analytics engine will provide you with the knowledge you need.</h2>
+                    </div>
+                </div>
+            </div>
+                    <a ng-show="slides().length &gt; 1" class="carousel-control left" ng-click="prev(); stopSliderTransition()" style="">‹</a>
+                    <a ng-show="slides().length &gt; 1" class="carousel-control right" ng-click="next(); stopSliderTransition()" style="">›</a>
+                </div>
+            <div id="icon_wrapper">
+                <!-- ngRepeat: icon in slide2Icon --><ul id="icons_white" ng-repeat="icon in slide2Icon" class="ng-scope">
+                    <li class="clickable"><img ng-class="{'slideicon-opacity': !slides2[$index].active} " ng-src="/images/register/icons/00GroupPage.png" ng-click="setActiveSlide($index);" src="/images/register/icons/00GroupPage.png" /></li>
+                </ul><ul id="icons_white" ng-repeat="icon in slide2Icon" class="ng-scope">
+                    <li class="clickable"><img ng-class="{'slideicon-opacity': !slides2[$index].active} " ng-src="/images/register/icons/01Calendar.png" ng-click="setActiveSlide($index);" src="/images/register/icons/01Calendar.png" class="slideicon-opacity" /></li>
+                </ul><ul id="icons_white" ng-repeat="icon in slide2Icon" class="ng-scope">
+                    <li class="clickable"><img ng-class="{'slideicon-opacity': !slides2[$index].active} " ng-src="/images/register/icons/02Poll.png" ng-click="setActiveSlide($index);" src="/images/register/icons/02Poll.png" class="slideicon-opacity" /></li>
+                </ul><ul id="icons_white" ng-repeat="icon in slide2Icon" class="ng-scope">
+                    <li class="clickable"><img ng-class="{'slideicon-opacity': !slides2[$index].active} " ng-src="/images/register/icons/03Volunteer.png" ng-click="setActiveSlide($index);" src="/images/register/icons/03Volunteer.png" class="slideicon-opacity" /></li>
+                </ul><ul id="icons_white" ng-repeat="icon in slide2Icon" class="ng-scope">
+                    <li class="clickable"><img ng-class="{'slideicon-opacity': !slides2[$index].active} " ng-src="/images/register/icons/04DuList.png" ng-click="setActiveSlide($index);" src="/images/register/icons/04DuList.png" class="slideicon-opacity" /></li>
+                </ul><ul id="icons_white" ng-repeat="icon in slide2Icon" class="ng-scope">
+                    <li class="clickable"><img ng-class="{'slideicon-opacity': !slides2[$index].active} " ng-src="/images/register/icons/05Analytics.png" ng-click="setActiveSlide($index);" src="/images/register/icons/05Analytics.png" class="slideicon-opacity" /></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="being_involved">
+        <div id="green_triangle">
+            <img src="/images/register/green-triangle.png" />
+        </div>
+        <div id="love_being">
+            <h1>Love Being Involved</h1>
+        </div>
+        <div id="get_started">
+            <p data-target="#registration_modal" data-toggle="modal" class="clickable">Get Started!</p>
+        </div>
+    </div>
+</div>
+
+
+
+</div>
+
+    <div style="z-index:1040;" id="footer_reg">
+        <img src="/images/register/wheedu-logo-white.png" />
+        <a href="/" class="footer-links">Home</a>
+        <!--<a class="footer-links" href="javascript:void();">Blog</a>-->
+        <a href="/beliefs" class="footer-links">What We Believe</a>
+        <a href="/terms" target="_blank" class="footerlinks">Terms of Use</a>
+        <a href="/privacy" target="_blank" class="footer-links">Privacy</a>
+        <!--<a href="/privacy"><i class="fa fa-facebook fa-2x"></i></a>-->
+        <!--<a href="/privacy"><i class="fa fa-twitter fa-2x"></i></a>-->
+    </div>
+
+
+</div>
+
+<div id="backdrop"></div>
+    <div data-backdrop="static" aria-hidden="true" aria-labelledby="sign_in_modal_label" role="dialog" tabindex="-1" id="sign_in_modal" class="modal hide fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div style="background-color: transparent;" class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button" ng-hide="invitation">×</button>
+                <button ng-click="invitedModalClose();" class="close" type="button" ng-show="invitation" style="display: none;">×</button>
+                <h4 style="" class="modal-title">whee<span class="title-orange">du</span> login</h4>
+                <p class="large-callout">Welcome back to Wheedu!</p>
+            </div>
+            <div class="modal-body">
+                <div ng-animate="{show: 'registration-show', hide: 'registration-hide'}" ng-hide="forgotPassword" class="">
+                    <form action="/users/auth/facebook" class="ng-pristine ng-valid">
+                        <button type="submit" class="btn reg-btn facebook">Sign in with Facebook</button>
+                    </form>
+                    <p style="color: white;"><em>or</em></p>
+                    <form name="login" class="ng-pristine ng-valid ng-valid-required">
+                        <input type="text" required="" placeholder="Email" name="email" class="reg-input ng-pristine ng-valid ng-valid-required" id="sign_in_email" ng-model="user.email" />
+                        <span ng-show="login.submitAttempt &amp;&amp; login.email.$error.required" style="display: none;">Whoops! Please provide an e-mail address.</span>
+                        <span ng-show="login.submitAttempt &amp;&amp; login.email.$error.email" style="display: none;">Whoops! This is not a valid email.</span>
+                        <input type="password" ng-minlength="8" required="" placeholder="Password" name="password" class="reg-input ng-pristine ng-valid-minlength ng-valid ng-valid-required" id="sign_in_password" ng-model="user.password" />
+                        <span ng-show="login.submitAttempt &amp;&amp; login.password.$error.minlength" style="display: none;">Whoops! Please provide a password with 8 characters or more</span>
+                        <span ng-show="login.submitAttempt &amp;&amp; login.password.$error.required" style="display: none;">Whoops! Please provide a password</span>
+                        <button ng-click="login.submitAttempt = true; (login.$invalid || loginLoading || logInUser());" id="sign_in_submit" class="btn reg-btn">Login</button>
+                        <div style="width: 70%; margin: 0 auto;">
+                            <div class="pull-left reg-checkbox">
+                                <input type="checkbox" ng-model="user.remember_me" id="remember_me" class="ng-pristine ng-valid" />
+                                <label for="remember_me"></label>
+                            </div>
+                            <label for="remember_me" class="pull-left">Remember Me</label>
+                            <a ng-click="forgotPassword = true;" class="pull-right forgot-password clickable">Forgot Password?</a>
+                        </div>
+                        <div style="width: 70%; margin: 0 auto; clear: both;">
+                            <a data-dismiss="modal" style="color: white;" class="clickable" ng-hide="invitation"><em>Cancel</em></a>
+                            <a ng-click="invitedModalClose();" style="color: white; display: none;" class="clickable" ng-show="invitation"><em>Cancel</em></a>
+                        </div>
+                    </form>
+                </div>
+                <div ng-animate="{show: 'registration-show', hide: 'registration-hide'}" ng-show="forgotPassword" class="" style="display: none;">
+                    <p class="large-callout">Enter your account email address below.</p>
+                    <form name="forgot_password" class="ng-pristine ng-invalid ng-invalid-required">
+                        <input type="text" required="" placeholder="Enter your Email Address" class="reg-input ng-pristine ng-invalid ng-invalid-required" id="sign_in_forgot_email" ng-model="forgotten_email" />
+                        <button class="btn reg-btn" ng-click="forgot_password.$invalid || forgottenPassword();" id="sign_in_forgot_email_submit">Submit <img src="/images/register/heart_loader_whiteorange_btn.gif" ng-show="loginLoading" style="display: none;" /></button>
+                        <p ng-click="forgotPassword = false;" style="color: white;" class="clickable"><em>Go back</em></p>
+                    </form>
+                    <div ng-animate="{show: 'forgot-alert-show'}" ng-show="forgotten_message" class="message-success ng-binding" style="display: none;">
+                        <span ng-click="forgotten_message='';" class="clickable">×</span>
+                        
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<div data-backdrop="static" aria-hidden="false" aria-labelledby="sign_in_modal_label" role="dialog" tabindex="-1" id="registration_modal" class="modal hide fade in" style="display: block;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div style="background-color: transparent;" class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button" ng-show="registrationStep == 0 &amp;&amp; !invitation" style="display: none;">×</button>
+                <button ng-click="invitedModalClose();" class="close" type="button" ng-show="registrationStep == 0 &amp;&amp; invitation" style="display: none;">×</button>
+                <h4 style="" class="modal-title ng-binding">whee<span class="title-orange">du</span> signup</h4>
+                <p class="large-callout ng-binding" style="">Established Connections</p>
+                <div ng-show="registrationStep &gt; 0 &amp;&amp; registrationStep &lt; 5" style="">
+                    <div ng-class="{'active' : registrationStep == 1}" class="registration-breadcrumbs"></div>
+                    <div ng-class="{'active' : registrationStep == 2}" class="registration-breadcrumbs"></div>
+                    <div ng-class="{'active' : registrationStep == 3}" class="registration-breadcrumbs"></div>
+                    <div ng-class="{'active' : registrationStep == 4}" class="registration-breadcrumbs active"></div>
+                </div>
+                <div ng-show="registrationStep &gt;= 5 &amp;&amp; registrationStep &lt; 12" class="tutorial-breadcrumbs" style="display: none;">
+                    <div ng-class="{'active' : registrationStep == 6}" class="registration-breadcrumbs"></div>
+                    <div ng-class="{'active' : registrationStep == 7}" class="registration-breadcrumbs"></div>
+                    <div ng-class="{'active' : registrationStep == 8}" class="registration-breadcrumbs"></div>
+                    <div ng-class="{'active' : registrationStep == 9}" class="registration-breadcrumbs"></div>
+                    <div ng-class="{'active' : registrationStep == 10}" class="registration-breadcrumbs"></div>
+                    <div ng-class="{'active' : registrationStep == 11}" class="registration-breadcrumbs"></div>
+                </div>
+                <p style="color: white; font-size: 11px; width: 70%; margin: 5px auto 0px; display: none;" ng-show="invitation &amp;&amp; registrationStep == 0;">If using an email address different from the address your invite was sent to, you'll need to request to join the group again once you’ve signed up.</p>
+                <div ng-class="{ 'tutorial' : registrationStep &gt; 4 }" class="registration-arrows back-arrow clickable tutorial-step-arrow" ng-hide="registrationStep &lt; 6 || registrationStep &gt; 11" ng-click="stepBack();" style="display: none;"><div><i class="icon-angle-left"></i></div><div>Back</div></div>
+                <div ng-class="{ 'tutorial' : registrationStep &gt; 4 }" class="registration-arrows skip-arrow clickable tutorial-step-arrow" ng-hide="registrationStep &lt; 5 || registrationStep &gt; 11" ng-click="stepSkip();" style="display: none;"><div class="ng-binding">Skip</div><div><i class="icon-angle-right"></i></div></div>
+            </div>
+            <div ng-class="{'tutorial-image-container' : registrationStep &gt; 4}" class="modal-body">
+                <div ng-class="{ 'tutorial' : registrationStep &gt; 4 }" class="registration-arrows back-arrow clickable" ng-hide="registrationStep == 0 || registrationStep == 1 || registrationStep &gt; 4" ng-click="stepBack();" style=""><div><i class="icon-angle-left"></i></div><div>Back</div></div>
+                <div ng-class="{ 'tutorial' : registrationStep &gt; 4 }" class="registration-arrows skip-arrow clickable" ng-hide="registrationStep == 0 || registrationStep &gt;= 4 " ng-click="stepSkip();" style="display: none;"><div class="ng-binding">Skip</div><div><i class="icon-angle-right"></i></div></div>
+                <div class="step-1" ng-animate="{show: 'registration-show', hide: 'registration-hide'}" ng-show="registrationStep == 0" style="display: none;">
+                    <form class="ng-pristine ng-valid">
+                        <button type="submit" class="btn reg-btn facebook" ng-click="registerUserFacebook();">Sign in with Facebook <img src="/images/heart_loader_whitefacebookblue_btn.gif" ng-show="registerFBLoading" style="display: none;" /></button>
+                    </form>
+                    <p style="color: white;"><em>or</em></p>
+                    <form name="registration" class="ng-dirty ng-valid-email ng-valid-required ng-valid ng-valid-minlength">
+                        <input type="text" required="" maxlength="50" placeholder="First Name - REQUIRED" name="first_name" class="reg-input ng-dirty ng-valid ng-valid-required" id="registration_first_name" ng-model="user.first_name" />
+                        <span ng-show="registration.submitAttempt &amp;&amp; registration.first_name.$error.required" style="display: none;">Whoops! Please provide a first name.</span>
+                        <input type="text" required="" maxlength="50" placeholder="Last Name - REQUIRED" name="last_name" class="reg-input ng-dirty ng-valid ng-valid-required" id="registration_last_name" ng-model="user.last_name" />
+                        <span ng-show="registration.submitAttempt &amp;&amp; registration.last_name.$error.required" style="display: none;">Whoops! Please provide a last name.</span>
+                        <input type="email" required="" placeholder="Email - REQUIRED" name="email" class="reg-input ng-dirty ng-valid-required ng-valid ng-valid-email" id="registration_email" ng-model="user.email" />
+                        <span ng-show="registration.submitAttempt &amp;&amp; registration.email.$error.required" style="display: none;">Whoops! Please provide an e-mail address.</span>
+                        <span ng-show="registration.submitAttempt &amp;&amp; registration.email.$error.email" style="display: none;">Whoops! This is not a valid email.</span>
+                        <input type="password" ng-minlength="8" required="" placeholder="Password - MINIMUM 8 CHARACTERS" name="password" class="reg-input ng-dirty ng-valid-required ng-valid ng-valid-minlength" id="registration_password" ng-model="user.password" />
+                        <span ng-show="registration.submitAttempt &amp;&amp; registration.password.$error.minlength" style="display: none;">Whoops! Please provide a password with 8 characters or more</span>
+                        <span ng-show="registration.submitAttempt &amp;&amp; registration.password.$error.required" style="display: none;">Whoops! Please provide a password.</span>
+                        <button ng-click="registration.submitAttempt=true; (registration.$invalid || registerLoading || registerUser());" class="btn reg-btn" id="registration_submit">Sign Up <img src="/images/register/heart_loader_whiteorange_btn.gif" ng-show="registerLoading" style="display: none;" /></button>
+                        <div style="width: 60%; margin: 0 auto;">
+                            <a ng-click="accountAlready();" class="forgot-password clickable">Already have an account?</a> | <a data-dismiss="modal" class="forgot-password clickable" ng-hide="invitation">Cancel</a><a ng-click="invitedModalClose();" class="forgot-password clickable" ng-show="invitation" style="display: none;">Cancel</a>
+                            <br />
+                            <p style="color: white; font-size: 11px; margin-top: 5px;"><em>By creating an account you are agreeing to our <a target="_blank" href="/terms">Terms of Service.</a></em></p>
+                        </div>
+                    </form>
+                </div>
+                <div class="step-2" ng-animate="{show: 'registration-show', hide: 'registration-hide'}" ng-show="registrationStep == 1" style="display: none;">
+                <form name="update_info" class="ng-pristine ng-valid">
+                    <input type="text" ng-pattern="/\d{5}/" placeholder="Zip Code (optional)" class="reg-input ng-pristine ng-valid ng-valid-pattern" id="registration_zipcode" ng-model="user_info.zipcode" />
+                    <span ng-show="update_info.submitAttempt &amp;&amp; update_info.zipcode.$error.pattern" style="display: none;">Whoops! Please enter a five digit zip code.</span>
+                    <input type="text" placeholder="Mobile Number (optional)" class="reg-input ng-pristine ng-valid" id="registration_mobile_phone" ng-model="user_info.mobile_phone" />
+                    <button ng-click="update_info.submitAttempt=true; (update_info.$invalid || registerLoading || updateProfile());" class="btn reg-btn">Next <img src="/images/register/heart_loader_whiteorange_btn.gif" ng-show="registerLoading" style="display: none;" /></button>
+                </form>
+                </div>
+                <div class="step-3" ng-animate="{show: 'registration-show', hide: 'registration-hide'}" ng-show="registrationStep == 2" style="display: none;">
+                    <form name="user_image" class="ng-pristine ng-valid">
+                        <div ng-switch="!!userImageUploader">
+                            <!-- ngSwitchWhen: true --><div ng-switch-when="true" class="ng-scope">
+                                <div ng-hide="userImageUploader.queue[0] &amp;&amp; userImageUploader.isHTML5">
+                                    <label for="registration_user_image">
+                                        <img ng-src="/images/large_default_user_icon.jpg" class="registration-user-image" src="/images/large_default_user_icon.jpg" />
+                                    </label>
+                                </div>
+                                <!-- ngRepeat: item in userImageUploader.queue -->
+                                <div class="file-upload">
+                                        <!-- ngRepeat: item in userImageUploader.queue -->
+                                        <button class="btn reg-btn" ng-hide="userImageUploader.queue[0]" id="registration_choose_user_image">Choose File</button>
+                                        <input type="file" accept="image/*" class="upload-btn" uploader="userImageUploader" nv-file-select="true" ng-hide="userImageUploader.queue[0]" style="font-size: 200px;" id="registration_user_image" />
+                                        <button ng-click="updateImage();" class="btn reg-btn" ng-show="userImageUploader.queue[0]" id="registration_upload_user_image" style="display: none;">Next <img src="/images/register/heart_loader_whiteorange_btn.gif" ng-show="registerLoading" style="display: none;" /></button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="step-4" ng-animate="{show: 'registration-show', hide: 'registration-hide'}" ng-show="registrationStep == 3" style="display: none;">
+                    <p class="registration-invites-description">Enter your contact's email addresses in this field. Then type in any personal message you'd like below</p>
+                    <p class="registration-invites-description" ng-show="invitesSent" style="display: none;">Invitation Sent! Invite more or <a ng-click="stepSkip();" class="clickable">click here</a> to continue.</p>
+                    <p class="registration-invites-description" ng-show="inviteErrors.emails" style="display: none;">Whoops! Looks like there’s not a valid email to send to.</p>
+                    <p class="registration-invites-description" ng-show="inviteErrors.message" style="display: none;">Please enter a personal message. Or <a ng-click="resetInviteMessage();" class="clickable">click here</a> to reset to a Wheedu recommended note.</p>
+                    <form name="contacts" class="ng-pristine ng-valid">
+                        <label class="registration-label" for="to_emails">To:</label>
+                        <textarea size="35" placeholder="Add emails" ng-model="inviteeEmails" class="host ng-pristine ng-valid" id="registration_invitee_emails"></textarea>
+                        <br />
+                        <label class="registration-label" for="invite_message">Message:</label>
+                        <textarea id="invite_message" ng-model="invitationMessage" class="ng-pristine ng-valid ng-binding"></textarea>
+                        <button ng-click="inviteViaEmail();" class="btn reg-btn" id="registration_send_invite">Send Invite <img src="/images/register/heart_loader_whiteorange_btn.gif" ng-show="registerLoading" style="display: none;" /></button>
+                    </form>
+                </div>
+                <div class="step-5" ng-animate="{show: 'registration-show', hide: 'registration-hide'}" ng-show="registrationStep == 4" style="">
+                    <div class="registration-groups-container">
+                        <div class="registration-groups-item">
+                            <div class="registration-groups-item-name registration-groups-description">
+                                Already Joined
+                            </div>
+                        </div>
+                        <!-- ngRepeat: group in user_groups | filter:{ is_group_user:true } --><div ng-repeat="group in user_groups | filter:{ is_group_user:true }" class="registration-groups-item ng-scope">
+                            <div class="registration-groups-item-image">
+                                <img ng-src="https://wheedu.s3.amazonaws.com/uploads/staging/group_image/image/10/thumb_Poll_Icon1.jpg?AWSAccessKeyId=10C29ZZTMRDX4P99AE02&amp;Signature=f%2BqgrrIUPJZdX6mMGHvJRaOgoRk%3D&amp;Expires=1412514581" src="https://wheedu.s3.amazonaws.com/uploads/staging/group_image/image/10/thumb_Poll_Icon1.jpg?AWSAccessKeyId=10C29ZZTMRDX4P99AE02&amp;Signature=f%2BqgrrIUPJZdX6mMGHvJRaOgoRk%3D&amp;Expires=1412514581" />
+                            </div>
+                            <div class="registration-groups-item-name ng-binding">
+                                Wheedu Central
+                            </div>
+                            <div class="registration-groups-item-actions">
+                                <i class="icon-info-sign ng-scope" tooltip-trigger="mouseenter" tooltip-html-unsafe="To communicate updates and news on the Wheedu community." tooltip-placement="right"></i>
+                                <img src="/images/checked-heart-active.png" ng-show="group.is_group_user &amp;&amp; !group.wheedu_group" ng-click="leaveGroup(group);" class="clickable" style="display: none;" />
+                                <img src="/images/checked-heart-active.png" tooltip-placement="left" tooltip-trigger="mouseenter" tooltip="Sorry, you cannot leave Wheedu groups. Trust us, you’ll love it!" ng-show="group.wheedu_group" class="clickable ng-scope" />
+                                <img src="/images/checked-heart-inactive.png" ng-hide="group.is_group_user" ng-click="joinGroup(group);" class="clickable" style="display: none;" />
+                            </div>
+                        </div><div ng-repeat="group in user_groups | filter:{ is_group_user:true }" class="registration-groups-item ng-scope">
+                            <div class="registration-groups-item-image">
+                                <img ng-src="https://wheedu.s3.amazonaws.com/uploads/staging/group_image/image/16/thumb_Question_Mark_Image.jpg?AWSAccessKeyId=10C29ZZTMRDX4P99AE02&amp;Signature=1drXQrqkl/qKWr8VxQoJuGk%2B8aw%3D&amp;Expires=1412514581" src="https://wheedu.s3.amazonaws.com/uploads/staging/group_image/image/16/thumb_Question_Mark_Image.jpg?AWSAccessKeyId=10C29ZZTMRDX4P99AE02&amp;Signature=1drXQrqkl/qKWr8VxQoJuGk%2B8aw%3D&amp;Expires=1412514581" />
+                            </div>
+                            <div class="registration-groups-item-name ng-binding">
+                                Welcome to Wheedu
+                            </div>
+                            <div class="registration-groups-item-actions">
+                                <i class="icon-info-sign ng-scope" tooltip-trigger="mouseenter" tooltip-html-unsafe="Does Wheedu confuse U?  Then step right up, the doctor is in..." tooltip-placement="right"></i>
+                                <img src="/images/checked-heart-active.png" ng-show="group.is_group_user &amp;&amp; !group.wheedu_group" ng-click="leaveGroup(group);" class="clickable" style="display: none;" />
+                                <img src="/images/checked-heart-active.png" tooltip-placement="left" tooltip-trigger="mouseenter" tooltip="Sorry, you cannot leave Wheedu groups. Trust us, you’ll love it!" ng-show="group.wheedu_group" class="clickable ng-scope" />
+                                <img src="/images/checked-heart-inactive.png" ng-hide="group.is_group_user" ng-click="joinGroup(group);" class="clickable" style="display: none;" />
+                            </div>
+                        </div>
+                        <div class="registration-groups-item">
+                            <div class="registration-groups-item-name registration-groups-description">
+                                Recommended Groups (click heart to join)
+                            </div>
+                        </div>
+                        <!-- ngRepeat: group in user_groups | filter:{ is_group_user:'false' } --><div ng-hide="group.private" ng-repeat="group in user_groups | filter:{ is_group_user:'false' }" class="registration-groups-item ng-scope">
+                            <div class="registration-groups-item-image">
+                                <img ng-src="https://wheedu.s3.amazonaws.com/uploads/staging/group_image/image/34/thumb_testing.jpg?AWSAccessKeyId=10C29ZZTMRDX4P99AE02&amp;Signature=LNu7q4HUprv/605He5rLfF1GwMo%3D&amp;Expires=1412514581" src="https://wheedu.s3.amazonaws.com/uploads/staging/group_image/image/34/thumb_testing.jpg?AWSAccessKeyId=10C29ZZTMRDX4P99AE02&amp;Signature=LNu7q4HUprv/605He5rLfF1GwMo%3D&amp;Expires=1412514581" />
+                            </div>
+                            <div class="registration-groups-item-name ng-binding">
+                                dummy project
+                            </div>
+                            <div class="registration-groups-item-actions">
+                                <i class="icon-info-sign ng-scope" tooltip-trigger="mouseenter" tooltip-html-unsafe="This is a dummy project. It's for dummies, 
+Dummy." tooltip-placement="right"></i>
+                                <img src="/images/checked-heart-active.png" ng-show="group.is_group_user &amp;&amp; !group.wheedu_group" ng-click="leaveGroup(group);" class="clickable" style="display: none;" />
+                                <img src="/images/checked-heart-active.png" tooltip-placement="left" tooltip-trigger="mouseenter" tooltip="Sorry, you cannot leave Wheedu groups. Trust us, you’ll love it!" ng-show="group.wheedu_group" class="clickable ng-scope" style="display: none;" />
+                                <img src="/images/checked-heart-inactive.png" ng-hide="group.is_group_user" ng-click="joinGroup(group);" class="clickable" />
+                            </div>
+                        </div><div ng-hide="group.private" ng-repeat="group in user_groups | filter:{ is_group_user:'false' }" class="registration-groups-item ng-scope">
+                            <div class="registration-groups-item-image">
+                                <img ng-src="https://wheedu.s3.amazonaws.com/uploads/staging/group_image/image/69/thumb_duck.jpg?AWSAccessKeyId=10C29ZZTMRDX4P99AE02&amp;Signature=vkRbRr8GFCLCuMwNbJa/4VCR0Yw%3D&amp;Expires=1412514581" src="https://wheedu.s3.amazonaws.com/uploads/staging/group_image/image/69/thumb_duck.jpg?AWSAccessKeyId=10C29ZZTMRDX4P99AE02&amp;Signature=vkRbRr8GFCLCuMwNbJa/4VCR0Yw%3D&amp;Expires=1412514581" />
+                            </div>
+                            <div class="registration-groups-item-name ng-binding">
+                                ducks
+                            </div>
+                            <div class="registration-groups-item-actions">
+                                <i class="icon-info-sign ng-scope" tooltip-trigger="mouseenter" tooltip-html-unsafe="we are super pumped about ducks. like all things ducks seriously." tooltip-placement="right"></i>
+                                <img src="/images/checked-heart-active.png" ng-show="group.is_group_user &amp;&amp; !group.wheedu_group" ng-click="leaveGroup(group);" class="clickable" style="display: none;" />
+                                <img src="/images/checked-heart-active.png" tooltip-placement="left" tooltip-trigger="mouseenter" tooltip="Sorry, you cannot leave Wheedu groups. Trust us, you’ll love it!" ng-show="group.wheedu_group" class="clickable ng-scope" style="display: none;" />
+                                <img src="/images/checked-heart-inactive.png" ng-hide="group.is_group_user" ng-click="joinGroup(group);" class="clickable" />
+                            </div>
+                        </div><div ng-hide="group.private" ng-repeat="group in user_groups | filter:{ is_group_user:'false' }" class="registration-groups-item ng-scope">
+                            <div class="registration-groups-item-image">
+                                <img ng-src="/images/thumb_project.jpg" src="/images/thumb_project.jpg" />
+                            </div>
+                            <div class="registration-groups-item-name ng-binding">
+                                test test
+                            </div>
+                            <div class="registration-groups-item-actions">
+                                <i class="icon-info-sign ng-scope" tooltip-trigger="mouseenter" tooltip-html-unsafe="testtest" tooltip-placement="right"></i>
+                                <img src="/images/checked-heart-active.png" ng-show="group.is_group_user &amp;&amp; !group.wheedu_group" ng-click="leaveGroup(group);" class="clickable" style="display: none;" />
+                                <img src="/images/checked-heart-active.png" tooltip-placement="left" tooltip-trigger="mouseenter" tooltip="Sorry, you cannot leave Wheedu groups. Trust us, you’ll love it!" ng-show="group.wheedu_group" class="clickable ng-scope" style="display: none;" />
+                                <img src="/images/checked-heart-inactive.png" ng-hide="group.is_group_user" ng-click="joinGroup(group);" class="clickable" />
+                            </div>
+                        </div><div ng-hide="group.private" ng-repeat="group in user_groups | filter:{ is_group_user:'false' }" class="registration-groups-item ng-scope" style="display: none;">
+                            <div class="registration-groups-item-image">
+                                <img ng-src="https://wheedu.s3.amazonaws.com/uploads/staging/group_image/image/30/thumb_loudnoisesicon.jpg?AWSAccessKeyId=10C29ZZTMRDX4P99AE02&amp;Signature=WKPObdJjH%2BfS5%2B886s/LUu0DbEE%3D&amp;Expires=1412514581" src="https://wheedu.s3.amazonaws.com/uploads/staging/group_image/image/30/thumb_loudnoisesicon.jpg?AWSAccessKeyId=10C29ZZTMRDX4P99AE02&amp;Signature=WKPObdJjH%2BfS5%2B886s/LUu0DbEE%3D&amp;Expires=1412514581" />
+                            </div>
+                            <div class="registration-groups-item-name ng-binding">
+                                Loud Noise Inspectors
+                            </div>
+                            <div class="registration-groups-item-actions">
+                                <i class="icon-info-sign ng-scope" tooltip-trigger="mouseenter" tooltip-html-unsafe="What was that noise? We'll look into it!" tooltip-placement="right"></i>
+                                <img src="/images/checked-heart-active.png" ng-show="group.is_group_user &amp;&amp; !group.wheedu_group" ng-click="leaveGroup(group);" class="clickable" style="display: none;" />
+                                <img src="/images/checked-heart-active.png" tooltip-placement="left" tooltip-trigger="mouseenter" tooltip="Sorry, you cannot leave Wheedu groups. Trust us, you’ll love it!" ng-show="group.wheedu_group" class="clickable ng-scope" style="display: none;" />
+                                <img src="/images/checked-heart-inactive.png" ng-hide="group.is_group_user" ng-click="joinGroup(group);" class="clickable" />
+                            </div>
+                        </div><div ng-hide="group.private" ng-repeat="group in user_groups | filter:{ is_group_user:'false' }" class="registration-groups-item ng-scope">
+                            <div class="registration-groups-item-image">
+                                <img ng-src="/images/thumb_project.jpg" src="/images/thumb_project.jpg" />
+                            </div>
+                            <div class="registration-groups-item-name ng-binding">
+                                Race Security
+                            </div>
+                            <div class="registration-groups-item-actions">
+                                <i class="icon-info-sign ng-scope" tooltip-trigger="mouseenter" tooltip-html-unsafe="Project our racers!" tooltip-placement="right"></i>
+                                <img src="/images/checked-heart-active.png" ng-show="group.is_group_user &amp;&amp; !group.wheedu_group" ng-click="leaveGroup(group);" class="clickable" style="display: none;" />
+                                <img src="/images/checked-heart-active.png" tooltip-placement="left" tooltip-trigger="mouseenter" tooltip="Sorry, you cannot leave Wheedu groups. Trust us, you’ll love it!" ng-show="group.wheedu_group" class="clickable ng-scope" style="display: none;" />
+                                <img src="/images/checked-heart-inactive.png" ng-hide="group.is_group_user" ng-click="joinGroup(group);" class="clickable" />
+                            </div>
+                        </div><div ng-hide="group.private" ng-repeat="group in user_groups | filter:{ is_group_user:'false' }" class="registration-groups-item ng-scope" style="display: none;">
+                            <div class="registration-groups-item-image">
+                                <img ng-src="/images/thumb_project.jpg" src="/images/thumb_project.jpg" />
+                            </div>
+                            <div class="registration-groups-item-name ng-binding">
+                                Toolbox Secret Santas
+                            </div>
+                            <div class="registration-groups-item-actions">
+                                <i class="icon-info-sign ng-scope" tooltip-trigger="mouseenter" tooltip-html-unsafe="The Secret Santa organization group - used for automation testing.  Do not delete." tooltip-placement="right"></i>
+                                <img src="/images/checked-heart-active.png" ng-show="group.is_group_user &amp;&amp; !group.wheedu_group" ng-click="leaveGroup(group);" class="clickable" style="display: none;" />
+                                <img src="/images/checked-heart-active.png" tooltip-placement="left" tooltip-trigger="mouseenter" tooltip="Sorry, you cannot leave Wheedu groups. Trust us, you’ll love it!" ng-show="group.wheedu_group" class="clickable ng-scope" style="display: none;" />
+                                <img src="/images/checked-heart-inactive.png" ng-hide="group.is_group_user" ng-click="joinGroup(group);" class="clickable" />
+                            </div>
+                        </div><div ng-hide="group.private" ng-repeat="group in user_groups | filter:{ is_group_user:'false' }" class="registration-groups-item ng-scope" style="display: none;">
+                            <div class="registration-groups-item-image">
+                                <img ng-src="https://wheedu.s3.amazonaws.com/uploads/staging/group_image/image/23/thumb_200140_10151191301143317_450331153_n.jpg?AWSAccessKeyId=10C29ZZTMRDX4P99AE02&amp;Signature=TTYGVPbOj8WikSeENNpMOYaiM7U%3D&amp;Expires=1412514582" src="https://wheedu.s3.amazonaws.com/uploads/staging/group_image/image/23/thumb_200140_10151191301143317_450331153_n.jpg?AWSAccessKeyId=10C29ZZTMRDX4P99AE02&amp;Signature=TTYGVPbOj8WikSeENNpMOYaiM7U%3D&amp;Expires=1412514582" />
+                            </div>
+                            <div class="registration-groups-item-name ng-binding">
+                                TB9 Holiday Party
+                            </div>
+                            <div class="registration-groups-item-actions">
+                                <i class="icon-info-sign ng-scope" tooltip-trigger="mouseenter" tooltip-html-unsafe="The purpose of the project is to plan the most epic Toolbox Holiday Party yet!" tooltip-placement="right"></i>
+                                <img src="/images/checked-heart-active.png" ng-show="group.is_group_user &amp;&amp; !group.wheedu_group" ng-click="leaveGroup(group);" class="clickable" style="display: none;" />
+                                <img src="/images/checked-heart-active.png" tooltip-placement="left" tooltip-trigger="mouseenter" tooltip="Sorry, you cannot leave Wheedu groups. Trust us, you’ll love it!" ng-show="group.wheedu_group" class="clickable ng-scope" style="display: none;" />
+                                <img src="/images/checked-heart-inactive.png" ng-hide="group.is_group_user" ng-click="joinGroup(group);" class="clickable" />
+                            </div>
+                        </div><div ng-hide="group.private" ng-repeat="group in user_groups | filter:{ is_group_user:'false' }" class="registration-groups-item ng-scope">
+                            <div class="registration-groups-item-image">
+                                <img ng-src="https://wheedu.s3.amazonaws.com/uploads/staging/group_image/image/56/thumb_testing.jpg?AWSAccessKeyId=10C29ZZTMRDX4P99AE02&amp;Signature=%2BuMkAQH3Qa8ElRBcefHupx/rRV0%3D&amp;Expires=1412514582" src="https://wheedu.s3.amazonaws.com/uploads/staging/group_image/image/56/thumb_testing.jpg?AWSAccessKeyId=10C29ZZTMRDX4P99AE02&amp;Signature=%2BuMkAQH3Qa8ElRBcefHupx/rRV0%3D&amp;Expires=1412514582" />
+                            </div>
+                            <div class="registration-groups-item-name ng-binding">
+                                Hackney Test Project
+                            </div>
+                            <div class="registration-groups-item-actions">
+                                <i class="icon-info-sign ng-scope" tooltip-trigger="mouseenter" tooltip-html-unsafe="To test mobile project creation path." tooltip-placement="right"></i>
+                                <img src="/images/checked-heart-active.png" ng-show="group.is_group_user &amp;&amp; !group.wheedu_group" ng-click="leaveGroup(group);" class="clickable" style="display: none;" />
+                                <img src="/images/checked-heart-active.png" tooltip-placement="left" tooltip-trigger="mouseenter" tooltip="Sorry, you cannot leave Wheedu groups. Trust us, you’ll love it!" ng-show="group.wheedu_group" class="clickable ng-scope" style="display: none;" />
+                                <img src="/images/checked-heart-inactive.png" ng-hide="group.is_group_user" ng-click="joinGroup(group);" class="clickable" />
+                            </div>
+                        </div><div ng-hide="group.private" ng-repeat="group in user_groups | filter:{ is_group_user:'false' }" class="registration-groups-item ng-scope">
+                            <div class="registration-groups-item-image">
+                                <img ng-src="/images/thumb_project.jpg" src="/images/thumb_project.jpg" />
+                            </div>
+                            <div class="registration-groups-item-name ng-binding">
+                                Toolbox Flip Cup Association
+                            </div>
+                            <div class="registration-groups-item-actions">
+                                <i class="icon-info-sign ng-scope" tooltip-trigger="mouseenter" tooltip-html-unsafe="A fixed group used in automated testing.  Do not delete, please!" tooltip-placement="right"></i>
+                                <img src="/images/checked-heart-active.png" ng-show="group.is_group_user &amp;&amp; !group.wheedu_group" ng-click="leaveGroup(group);" class="clickable" style="display: none;" />
+                                <img src="/images/checked-heart-active.png" tooltip-placement="left" tooltip-trigger="mouseenter" tooltip="Sorry, you cannot leave Wheedu groups. Trust us, you’ll love it!" ng-show="group.wheedu_group" class="clickable ng-scope" style="display: none;" />
+                                <img src="/images/checked-heart-inactive.png" ng-hide="group.is_group_user" ng-click="joinGroup(group);" class="clickable" />
+                            </div>
+                        </div><div ng-hide="group.private" ng-repeat="group in user_groups | filter:{ is_group_user:'false' }" class="registration-groups-item ng-scope">
+                            <div class="registration-groups-item-image">
+                                <img ng-src="/images/thumb_project.jpg" src="/images/thumb_project.jpg" />
+                            </div>
+                            <div class="registration-groups-item-name ng-binding">
+                                St. Brutus' Secure Center for Incurably Crinimal Boys
+                            </div>
+                            <div class="registration-groups-item-actions">
+                                <i class="icon-info-sign ng-scope" tooltip-trigger="mouseenter" tooltip-html-unsafe="An institution for &quot;mentally subnormal&quot; and violent adolescent males." tooltip-placement="right"></i>
+                                <img src="/images/checked-heart-active.png" ng-show="group.is_group_user &amp;&amp; !group.wheedu_group" ng-click="leaveGroup(group);" class="clickable" style="display: none;" />
+                                <img src="/images/checked-heart-active.png" tooltip-placement="left" tooltip-trigger="mouseenter" tooltip="Sorry, you cannot leave Wheedu groups. Trust us, you’ll love it!" ng-show="group.wheedu_group" class="clickable ng-scope" style="display: none;" />
+                                <img src="/images/checked-heart-inactive.png" ng-hide="group.is_group_user" ng-click="joinGroup(group);" class="clickable" />
+                            </div>
+                        </div>
+                    </div>
+                    <form class="ng-pristine ng-valid">
+                        <button class="btn reg-btn" ng-click="registrationStep = 5;">
+                            Finish
+                        </button>
+                    </form>
+                </div>
+                <div class="step-6 mobile" ng-animate="{show: 'registration-show', hide: 'registration-hide'}" ng-show="registrationStep == 5" style="display: none;">
+                    <div>
+                        <div style="margin-bottom: 30px;" ng-hide="goToGroup">
+                            <div>
+                            <img src="/images/register/tutorial/Wheedu_Tutorial_Congrats.jpg" />
+                            </div>
+                            <p>Now its time to get started</p>
+                        </div>
+                        <div style="margin-bottom: 30px; display: none;" ng-show="goToGroup">
+                            <div class="registration-groups-container final-step">
+                                <!-- ngRepeat: group in user_groups | filter:{ is_group_user:true } --><div ng-repeat="group in user_groups | filter:{ is_group_user:true }" class="registration-groups-item ng-scope">
+                                    <div class="registration-groups-item-image">
+                                        <img ng-src="https://wheedu.s3.amazonaws.com/uploads/staging/group_image/image/10/thumb_Poll_Icon1.jpg?AWSAccessKeyId=10C29ZZTMRDX4P99AE02&amp;Signature=f%2BqgrrIUPJZdX6mMGHvJRaOgoRk%3D&amp;Expires=1412514581" src="https://wheedu.s3.amazonaws.com/uploads/staging/group_image/image/10/thumb_Poll_Icon1.jpg?AWSAccessKeyId=10C29ZZTMRDX4P99AE02&amp;Signature=f%2BqgrrIUPJZdX6mMGHvJRaOgoRk%3D&amp;Expires=1412514581" />
+                                    </div>
+                                    <div class="registration-groups-item-name">
+                                        <a href="/groups/wheedu" class="ng-binding">Wheedu Central</a>
+                                    </div>
+                                    <div class="registration-groups-item-actions">
+                                        <i class="icon-info-sign ng-scope" tooltip-trigger="mouseenter" tooltip-html-unsafe="To communicate updates and news on the Wheedu community." tooltip-placement="left"></i>
+                                        <a href="/groups/wheedu"><img src="/images/checked-heart-active.png" ng-show="group.is_group_user" /></a>
+                                    </div>
+                                </div><div ng-repeat="group in user_groups | filter:{ is_group_user:true }" class="registration-groups-item ng-scope">
+                                    <div class="registration-groups-item-image">
+                                        <img ng-src="https://wheedu.s3.amazonaws.com/uploads/staging/group_image/image/16/thumb_Question_Mark_Image.jpg?AWSAccessKeyId=10C29ZZTMRDX4P99AE02&amp;Signature=1drXQrqkl/qKWr8VxQoJuGk%2B8aw%3D&amp;Expires=1412514581" src="https://wheedu.s3.amazonaws.com/uploads/staging/group_image/image/16/thumb_Question_Mark_Image.jpg?AWSAccessKeyId=10C29ZZTMRDX4P99AE02&amp;Signature=1drXQrqkl/qKWr8VxQoJuGk%2B8aw%3D&amp;Expires=1412514581" />
+                                    </div>
+                                    <div class="registration-groups-item-name">
+                                        <a href="/groups/wheedu-faq" class="ng-binding">Welcome to Wheedu</a>
+                                    </div>
+                                    <div class="registration-groups-item-actions">
+                                        <i class="icon-info-sign ng-scope" tooltip-trigger="mouseenter" tooltip-html-unsafe="Does Wheedu confuse U?  Then step right up, the doctor is in..." tooltip-placement="left"></i>
+                                        <a href="/groups/wheedu-faq"><img src="/images/checked-heart-active.png" ng-show="group.is_group_user" /></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="margin-bottom: 10px;">
+                                <form method="GET" action="/search" class="ng-pristine ng-valid">
+                                    <input type="text" class="search-entry" name="search" placeholder="what are you looking for?" style="margin-bottom: 0;" id="registration_search_1" />
+                                    <button class="search-submit-btn" id="registration_search_submit_3">go</button>
+                                </form>
+                            </div>
+                            <a ng-click="goToGroup = true;" style="width: 75%; text-transform: uppercase; margin-bottom: 10px;" class="btn clickable" id="registration_goto_group_1" ng-hide="goToGroup==true;"><img src="/images/register/tutorial/group-icon.jpg" />go to a group</a>
+                            <a href="/groups/new" style="width: 75%; text-transform: uppercase; background-color: #c4d7d6;" class="btn clickable" id="registration_start_group_1"><i class="icon-plus"></i> start a group</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-6 desktop" ng-animate="{show: 'registration-show', hide: 'registration-hide'}" ng-show="registrationStep == 5" style="display: none;">
+                    <div>
+                        <img src="/images/register/tutorial/Wheedu_Tutorial_00.jpg" ng-click="stepSkip();" />
+                        <button ng-click="stepSkip();" class="btn">Let's Get Started!</button>
+                    </div>
+                </div>
+                <div class="step-7" ng-animate="{show: 'registration-show', hide: 'registration-hide'}" ng-show="registrationStep == 6" style="display: none;">
+                    <div>
+                        <img src="/images/register/tutorial/Wheedu_Tutorial_01.jpg" ng-click="stepSkip();" class="clickable" />
+                    </div>
+                </div>
+                <div class="step-8" ng-animate="{show: 'registration-show', hide: 'registration-hide'}" ng-show="registrationStep == 7" style="display: none;">
+                    <div>
+                        <img src="/images/register/tutorial/Wheedu_Tutorial_02.jpg" ng-click="stepSkip();" class="clickable" />
+                    </div>
+                </div>
+                <div class="step-9" ng-animate="{show: 'registration-show', hide: 'registration-hide'}" ng-show="registrationStep == 8" style="display: none;">
+                    <div>
+                        <img src="/images/register/tutorial/Wheedu_Tutorial_03.jpg" ng-click="stepSkip();" class="clickable" />
+                    </div>
+                </div>
+                <div class="step-10" ng-animate="{show: 'registration-show', hide: 'registration-hide'}" ng-show="registrationStep == 9" style="display: none;">
+                    <div>
+                        <img src="/images/register/tutorial/Wheedu_Tutorial_04.jpg" ng-click="stepSkip();" class="clickable" />
+                    </div>
+                </div>
+                <div class="step-11" ng-animate="{show: 'registration-show', hide: 'registration-hide'}" ng-show="registrationStep == 10" style="display: none;">
+                    <div>
+                        <img src="/images/register/tutorial/Wheedu_Tutorial_05.jpg" ng-click="stepSkip();" class="clickable" />
+                    </div>
+                </div>
+                <div class="step-12 row-fluid" ng-animate="{show: 'registration-show', hide: 'registration-hide'}" ng-show="registrationStep == 11" style="display: none;">
+                    <div ng-click="stepSkip();" class="span12">
+                        <img src="/images/register/tutorial/Wheedu_Tutorial_06-1.jpg" />
+                        <div class="row">
+                            <div class="span6 hide-responsive">
+                                <img src="/images/register/tutorial/Wheedu_Tutorial_06-2.jpg" />
+                            </div>
+                            <div class="span6">
+                                <p>Explore Wheedu to check out other great features like Direct Messaging other group members and all the cool tools available to help you manage groups.</p>
+                                <p>Also, Wheedu is fully mobile. Download the Wheedu mobile app in the Apple App Store today and experience Wheedu anywhere!</p>
+                                <a target="_blank" href="https://itunes.apple.com/us/app/wheedu-get-your-group-going/id873408283?mt=8">
+                                    <img src="/images/register/app-store.png" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-13 row-fluid" ng-animate="{show: 'registration-show', hide: 'registration-hide'}" ng-show="registrationStep == 12" style="display: none;">
+                    <div class="span5 hide-responsive">
+                        <img src="/images/register/tutorial/Wheedu_Tutorial_07.jpg" />
+                    </div>
+                    <div class="span7">
+                        <div style="margin-bottom: 30px;" ng-hide="goToGroup">
+                            <div>
+                                <img src="/images/register/tutorial/Wheedu_Tutorial_Congrats.jpg" />
+                            </div>
+                            <p>You now have your PHD in all things Wheedu and are an official Wheedu'er.</p>
+                            <p>Now its time to get started</p>
+                        </div>
+                        <div style="margin-bottom: 30px; display: none;" ng-show="goToGroup">
+                            <div class="registration-groups-container final-step">
+                                <!-- ngRepeat: group in user_groups | filter:{ is_group_user:true } --><div ng-repeat="group in user_groups | filter:{ is_group_user:true }" class="registration-groups-item ng-scope">
+                                    <div class="registration-groups-item-image">
+                                        <img ng-src="https://wheedu.s3.amazonaws.com/uploads/staging/group_image/image/10/thumb_Poll_Icon1.jpg?AWSAccessKeyId=10C29ZZTMRDX4P99AE02&amp;Signature=f%2BqgrrIUPJZdX6mMGHvJRaOgoRk%3D&amp;Expires=1412514581" src="https://wheedu.s3.amazonaws.com/uploads/staging/group_image/image/10/thumb_Poll_Icon1.jpg?AWSAccessKeyId=10C29ZZTMRDX4P99AE02&amp;Signature=f%2BqgrrIUPJZdX6mMGHvJRaOgoRk%3D&amp;Expires=1412514581" />
+                                    </div>
+                                    <div class="registration-groups-item-name">
+                                        <a href="/groups/wheedu" class="ng-binding">Wheedu Central</a>
+                                    </div>
+                                    <div class="registration-groups-item-actions">
+                                        <i class="icon-info-sign ng-scope" tooltip-trigger="mouseenter" tooltip-html-unsafe="To communicate updates and news on the Wheedu community." tooltip-placement="left"></i>
+                                        <a href="/groups/wheedu"><img src="/images/checked-heart-active.png" ng-show="group.is_group_user" /></a>
+                                    </div>
+                                </div><div ng-repeat="group in user_groups | filter:{ is_group_user:true }" class="registration-groups-item ng-scope">
+                                    <div class="registration-groups-item-image">
+                                        <img ng-src="https://wheedu.s3.amazonaws.com/uploads/staging/group_image/image/16/thumb_Question_Mark_Image.jpg?AWSAccessKeyId=10C29ZZTMRDX4P99AE02&amp;Signature=1drXQrqkl/qKWr8VxQoJuGk%2B8aw%3D&amp;Expires=1412514581" src="https://wheedu.s3.amazonaws.com/uploads/staging/group_image/image/16/thumb_Question_Mark_Image.jpg?AWSAccessKeyId=10C29ZZTMRDX4P99AE02&amp;Signature=1drXQrqkl/qKWr8VxQoJuGk%2B8aw%3D&amp;Expires=1412514581" />
+                                    </div>
+                                    <div class="registration-groups-item-name">
+                                        <a href="/groups/wheedu-faq" class="ng-binding">Welcome to Wheedu</a>
+                                    </div>
+                                    <div class="registration-groups-item-actions">
+                                        <i class="icon-info-sign ng-scope" tooltip-trigger="mouseenter" tooltip-html-unsafe="Does Wheedu confuse U?  Then step right up, the doctor is in..." tooltip-placement="left"></i>
+                                        <a href="/groups/wheedu-faq"><img src="/images/checked-heart-active.png" ng-show="group.is_group_user" /></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="margin-bottom: 10px;">
+                                <form method="GET" action="/search" class="ng-pristine ng-valid">
+                                    <input type="text" class="search-entry" name="search" placeholder="what are you looking for?" style="margin-bottom: 0;" id="registration_search_2" />
+                                    <button class="search-submit-btn" id="registration_search_submit_2">go</button>
+                                </form>
+                            </div>
+                            <a ng-click="goToGroup = true;" style="width: 75%; text-transform: uppercase; margin-bottom: 10px;" class="btn clickable" id="registration_goto_group_2"><img src="/images/register/tutorial/group-icon.jpg" />go to a group</a>
+                            <a href="/groups/new" style="width: 75%; text-transform: uppercase; background-color: #c4d7d6;" class="btn clickable" id="registration_start_group_2"><i class="icon-plus"></i> start a group</a>
+                            <a href="/groups/" class="invite-straight-link ng-binding" ng-show="invitation" style="display: none;">Go straight to </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-21" ng-animate="{show: 'registration-show', hide: 'registration-hide'}" ng-show="registrationStep == 20" style="display: none;">
+                    <div>
+                        <img src="/images/register/tutorial/Wheedu_Tutorial_20.jpg" />
+                        <div class="step-21-actions-container">
+                            <button class="btn" ng-click="registrationStep = 21;" ng-hide="invitation">Skip The Tour</button>
+                            <a class="btn ng-binding" href="/groups/" ng-show="invitation" style="display: none;">Take me to </a>
+                            <button class="btn" ng-click="registrationStep = 6;">Return to Tour</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-22" ng-animate="{show: 'registration-show', hide: 'registration-hide'}" ng-show="registrationStep == 21" style="display: none;">
+                    <div>
+                        <img src="/images/register/tutorial/Wheedu_Tutorial_21.jpg" />
+                        <div>
+                            <div style="margin-bottom: 10px;">
+                                <form method="GET" action="/search" class="ng-pristine ng-valid">
+                                    <input type="text" class="search-entry" name="search" placeholder="what are you looking for?" style="margin-bottom: 0;" id="registration_search_3" />
+                                    <button class="search-submit-btn" id="registration_search_submit_3">go</button>
+                                </form>
+                            </div>
+                            <a ng-click="goToGroup = true; registrationStep=12;" style="width: 75%; text-transform: uppercase; margin-bottom: 10px;" class="btn clickable" id="registration_goto_group_3"><img src="/images/register/tutorial/group-icon.jpg" />go to a group</a>
+                            <a href="/groups/new" style="width: 75%; text-transform: uppercase; background-color: #c4d7d6;" class="btn clickable" id="registration_start_group_3"><i class="icon-plus"></i> start a group</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clickable skip-tour" ng-show="registrationStep &gt;= 5 &amp;&amp; registrationStep &lt;= 11 &amp;&amp; !invitation" ng-click="registrationStep = 20;" style="display: none;">Skip our tour</div>
+            <div class="clickable skip-tour ng-binding" ng-show="registrationStep &gt;= 5 &amp;&amp; registrationStep &lt;= 11 &amp;&amp; invitation" ng-click="registrationStep = 20;" style="display: none;">Skip tour and go to </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+    <div data-backdrop="static" aria-hidden="true" aria-labelledby="not_logged_in_modal_label" role="dialog" tabindex="-1" id="not_logged_in_modal" class="modal hide fade invited-guest">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!--<div class="modal-header">-->
+
+      <!--</div>-->
+      <div class="modal-body">
+        <div>
+          <div>
+            <h2>Welcome back to Wheedu!</h2>
+            <p>You're currently not logged in to your account.</p>
+            <p class="second">Just <a ng-click="accountAlready();" class="clickable">sign in</a> to go to your desired destination.</p>
+            <img src="/images/mr_heart_settings.jpg" class="mr-heart-flip" />
+          </div>
+          <div class="spacer"></div>
+          <div class="invite-actions">
+            <div class="no-padding">
+              <button ng-click="accountAlready();" class="btn reg-btn reg-btn-small reg-btn-login">Login</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<script src="/javascripts/nav.js"></script>
+<script src="/javascripts/nav-search.js"></script>
+<script src="/javascripts/jquery.easing.1.3.js"></script>
+<script src="/javascripts/jquery.liquid-slider.min.js"></script>
+<script src="/javascripts/jquery.touchSwipe.min.js"></script>
+<script src="/javascripts/script.js"></script>
+<script src="/javascripts/jquery.sidr.min.js"></script>
+
+<script>
+	$('#responsive-menu-button').sidr({
+		name: 'sidr-main',
+		source: '#navigation',
+		side: 'left',
+		speed: 200,
+		displace: false
+	});
+</script><div id="sidr-main" style="display: none;" class="sidr left"><div class="sidr-inner">undefined</div></div>
+<script src="http://js-agent.newrelic.com/nr-412.min.js"></script><div class="hiddendiv common"></div><script type="text/javascript" src="http://beacon-2.newrelic.com/1/1bcd4d67cc?a=2818757&amp;qt=18&amp;ap=258&amp;be=489&amp;fe=4526&amp;dc=2835&amp;v=412.920d26d&amp;to=JQsLQRRXVFQHRBoABhANFlBJS11LEV9aChBJCgBC&amp;f=%5B%22err%22,%22xhr%22%5D&amp;jsonp=NREUM.setToken&amp;perf=%7B%22timing%22:%7B%22of%22:1409922570395,%22n%22:0,%22dl%22:462,%22di%22:3318,%22ds%22:3323,%22de%22:3490,%22dc%22:5014,%22l%22:5014,%22le%22:5019,%22r%22:9,%22re%22:9,%22f%22:9,%22dn%22:9,%22dne%22:9,%22c%22:9,%22ce%22:9,%22rq%22:114,%22rp%22:461,%22rpe%22:570%7D,%22navigation%22:%7B%7D%7D"></script><div class="modal-backdrop fade in"></div></body></html>
