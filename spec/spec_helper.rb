@@ -32,10 +32,6 @@ end
 $: << Dir.pwd
 Dir["spec/features/steps/**/*.rb"].each {|f| require f}
 
-
-
-
-
 class User
   #############################################################################
   # Class representing a (randomly-generated) user
@@ -179,7 +175,7 @@ class User
       [rand(100...6999), names.sample, types.sample].join ' '
     end,
           
-    address_2: lambda { "Apt. #{rand(1000...9999)}" },   
+    address_2: lambda { "Apt. #{rand(1000...9999)}" },
 
     zip: lambda { rand(10000...99998).to_s },
 
@@ -192,24 +188,25 @@ class User
     email: lambda { "TB9TEST#{rand(000010...9999999)}@foo.com"  }
   }
 
+  # Likewise, but the lambdas get the hash so far as an argument
+  DerivedAttributes = {
+    gender_long: lambda { |data| Genders[data[:gender_short]] },
+
+    state_full:  lambda { |data| States[data[:state_short]] },
+
+    first_name: lambda do |data| 
+      data[:gender_short] == 'F' ? data[:girl_name] : data[:boy_name]
+    end
+  }
+
   # constructor
   def initialize
-
     # first, the random stuff
-    @data = Hash[ SimpleAttributes.map { |k,v| [k, v.sample] } +
-                  ComplexAttributes.map { |k,v| [k, v.() ] } ]
+    @data = Hash[ SimpleAttributes.map  { |key, arr| [key, arr.sample] }  +
+                  ComplexAttributes.map { |key, fun| [key, fun.()]     } ] 
 
     # then the derived stuff
-    @data[:gender_long] = Genders[@data[:gender_short]]
-    @data[:state_full] = States[@data[:state_short]]    
-    if @data[:gender_short] == 'F'
-      @data[:first_name] = @data[:girl_name]
-    else
-      @data[:first_name] = @data[:boy_name]
-    end
-    
-
-   
+    @data.merge! Hash[ DerivedAttributes.map { |key, fun| [key, fun.(@data)] } ]
   end
 
   def method_missing(name, *args, &block)
@@ -217,12 +214,10 @@ class User
     # if it doesn't understand them either, then treat them as keys
     if @data.respond_to? name then
       @data.send(name, *args, &block)
-    elsif name.to_s =~ /=$/ then
-      @data[name.to_s.sub(/=$/, '').intern] = args.first
+    elsif name.to_s =~ /^(.*)=$/ then
+      @data[$1] = args.first
     elsif @data.include? name then
       @data[name]
     end
   end
 end
-
-
